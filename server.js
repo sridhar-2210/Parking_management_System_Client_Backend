@@ -12,6 +12,10 @@ const port = process.env.PORT || 5000;
 
 app.use(express.json());
 app.use(cors());
+app.get("/", (req, res) => {
+  res.send("Server is running...");
+});
+
 app.use("/api/login", require("./routes/LoginRoutes"));
 app.use("/api/signup", require("./routes/signUpRoutes"));
 app.use("/api/slots", require("./routes/parkingRoutes"));
@@ -21,8 +25,5 @@ app.use(errorHandler);
 
 app.listen(port, "0.0.0.0", () => {
   console.log(`Server running on port ${port}`);
-});
-app.get("/", (req, res) => {
-  res.send("Server is running...");
 });
 
