@@ -19,6 +19,10 @@ app.use("/api/payment", require("./routes/paymentRoutes"));
 app.use("/api/reviews", require("./routes/reviewRoutes"));
 app.use(errorHandler);
 
-app.listen(port, () => {
+app.listen(port, "0.0.0.0", () => {
   console.log(`Server running on port ${port}`);
 });
+app.get("/", (req, res) => {
+  res.send("Server is running...");
+});
+
