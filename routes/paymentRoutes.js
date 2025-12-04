@@ -36,8 +36,8 @@ router.post('/create-checkout-session', async (req, res) => {
       ],
       mode: 'payment',
       metadata: { lot_id, user_name, from, to },
-      success_url: 'http://localhost:5173?payment=success',
-      cancel_url: 'http://localhost:5173?payment=cancel',
+      success_url: 'https://parking-management-system-client-fr.vercel.app/?payment=success',
+      cancel_url: 'https://parking-management-system-client-fr.vercel.app/?payment=cancel',
     });
 
     // Save order in MongoDB
